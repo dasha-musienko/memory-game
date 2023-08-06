@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+ul {
+  display: block;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.button {
+  padding: 0;
+  border: none;
+  background: none;
+  text-align: center;
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cards {
+  width: 440px;
+  height: 440px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  width: 100px;
+  height: 100px;
+
+  font-size: 3em;
+  background-color: #fff;
+
+  border-radius: 12px;
+
+  box-shadow: 0px 4px 50px -5px rgba(0, 0, 0, 0.15);
+  transform: rotateY(180deg);
+  transition: 0.35s;
+}
+.card.open {
+  transform: rotateY(0deg);
+}
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-color: blue;
+  border-radius: 12px;
+  background: linear-gradient(138deg, #f90716 0%, #ffca03 100%);
+
+  transition: 0.45s;
+  transform: rotateY(0deg);
+  backface-visibility: hidden;
+}
+
+.open::after,
+.match::after {
+  transform: rotateY(180deg);
+}
+.match::after {
+  animation-duration: 0.5s;
+}
+
+.animate__shakeX {
+  animation-duration: 0.7s;
+}
+
+.btn {
+  margin-top: 28px;
+  padding: 11px 24px;
+  border-radius: 12px;
+
+  border: 2px solid #c34d03;
+  background-color: transparent;
+  color: #343434;
+
+  font-weight: 500;
+  font-size: 16px;
+
+  cursor: pointer;
+  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.btn:hover,
+.btn:focus {
+  background-color: #c34d03;
+  color: #ffffff;
+}
+
+.alertify-notifier.ajs-right .ajs-message.ajs-visible {
+  border-radius: 10px;
+}
+.alertify-notifier .ajs-message.ajs-success {
+  background: #c34d03;
+  color: #fff;
+}
